@@ -11,6 +11,7 @@
 #include <utility>
 #include <vector>
 
+#include "base/files/file_path.h"
 #include "base/task/cancelable_task_tracker.h"
 #include "chrome/browser/icon_manager.h"
 #include "chrome/browser/process_singleton.h"
@@ -113,6 +114,7 @@ class App : public AtomBrowserClient::Delegate,
 #endif
 
   // content::ContentBrowserClient:
+  base::FilePath GetFontLookupTableCacheDir() override;
   void AllowCertificateError(
       content::WebContents* web_contents,
       int cert_error,
